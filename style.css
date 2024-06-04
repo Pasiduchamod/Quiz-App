@@ -2,9 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif ;
 }
 body{
-    background: rgb(39, 7, 124);
+    background: white;
+}
+.logo{
+    width: 150px;
+    margin: 20px auto 20px;
+    display: grid;
 }
 .app{
     align-items: center;
@@ -14,10 +20,11 @@ body{
     max-width: 700px;
     border-radius: 10px;
     padding: 30px;
+    box-shadow: 1px 1px 20px rgb(98, 98, 98);
 
 }
 .app h1{
-    font-weight: 25px;
+    font-size: 50px;
     color: rgb(32, 32, 32);
     border-bottom: 1px solid #333;
     padding-bottom:30px ;
@@ -31,25 +38,33 @@ body{
     display: block;
     padding: 10px;
     margin: 20px 0;
-    border-radius: 10px;
+    border-radius: 5px;
     text-align: left;
     width: 100%;
-    border: 1px solid #555;
+    border: 2px solid #cccccc;
     cursor: pointer;
 }
-.btn:hover{
-    background: #222;
-    color: #fff;   
-    transition: 0.7s;  
+.btn:hover:not([disabled]){
+    background: #e8e7e7; 
+    transition: 0.7s;      
+}
+.btn:disabled{
+    cursor: not-allowed;
 }
 #next-btn{
-    padding: 10px 40px;
+    padding: 13px 50px;
     border: 0px solid black;
-    background: rgb(20, 3, 83);
+    background: rgb(0, 159, 244);
     color: #fff;
     border-radius: 20px;
     cursor: pointer;
     display: block;
     margin: 20px auto 20px;
     display: none;
+}
+.correct{
+    background: rgb(0, 190, 10);
+}
+.incorrect{
+    background: rgb(255, 0, 0);
 }
