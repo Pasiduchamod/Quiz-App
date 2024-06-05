@@ -50,6 +50,9 @@ const questionELement = document.getElementById("question");
 const answerButton = document.getElementById("answer-btn");
 const nextButton = document.getElementById("next-btn");
 const strtbtn = document.getElementById("strtbtn");
+const check = document.getElementById("check");
+const qnum = document.getElementById("qnum");
+const result = document.getElementById("result");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -69,6 +72,8 @@ function showQuestion(){
     resetState();
     let currentQuestion= questions[currentQuestionIndex];
     let questionNum = currentQuestionIndex+1;
+    qnum.innerHTML = `Question Number(${currentQuestionIndex+1}/5)`;
+    qnum.style.display = "block";
     questionELement.innerHTML = questionNum+". "+currentQuestion.question;
 
     currentQuestion.answers.forEach(answers =>{
@@ -97,9 +102,13 @@ function selectAnswer(e){
     const isCorrect = selectedBtn.dataset.correct === "true";
     if(isCorrect){
         selectedBtn.classList.add("correct");
+        check.innerHTML = "Correct Answer.";
         score++;
+        check.style.display = "block";
     }else{
         selectedBtn.classList.add("incorrect");
+        check.innerHTML = "Incorrect Answer.";
+        check.style.display = "block";
     }
     Array.from(answerButton.children).forEach(button =>{
         if(button.dataset.correct === "true"){
@@ -113,8 +122,18 @@ function selectAnswer(e){
 function showScore(){
     resetState();
     questionELement.innerHTML = `You scored ${score} out of ${questions.length}!`;
+    if(score==5){
+        var newele =document.createElement("h3")
+        newele.textContent = "You are Brilliant..";
+        document.getElementById("result").appendChild(newele);
+    }else{
+        var newele = document.createElement("h3");
+        newele.textContent = "Try again for get highest score..";
+        document.getElementById("result").appendChild(newele);
+    }
     nextButton.innerHTML = "Play again";
     nextButton.style.display = "block";
+    qnum.style.display = "none";
 }
 
 function handleNextButton(){
@@ -127,10 +146,15 @@ function handleNextButton(){
 }
 
 nextButton.addEventListener("click",()=>{
+    check.style.display = "none";
     if(currentQuestionIndex<questions.length){
         handleNextButton();
     }else{
-        startQuiz();
+        var contentDiv = document.getElementById("result");
+        if (contentDiv.lastChild) {
+            contentDiv.removeChild(contentDiv.lastChild);
+        }
+    startQuiz();
     }
 })
 
