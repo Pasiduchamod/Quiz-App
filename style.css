@@ -5,12 +5,45 @@
     font-family:Arial, Helvetica, sans-serif ;
 }
 body{
-    background: white;
+    background:  linear-gradient(150deg,rgb(8, 0, 62),rgb(0, 82, 141));;
+}
+.homebody{
+    background: linear-gradient(150deg,rgb(8, 0, 62),rgb(0, 82, 141));
 }
 .logo{
     width: 150px;
     margin: 20px auto 20px;
     display: grid;
+}
+.homelogo{
+    width: 150px;
+    margin: 20px auto 20px;
+    display: grid;
+    background: white;
+    border-radius: 20px;
+    margin-top: 80px;
+    transition: 1s;
+}
+.welcome{
+    color: #fff;
+    text-align: center;
+    font-size: 100px;
+    margin-top: 50px;
+    transition-duration: 3s;
+}
+.strtbtn{
+    margin: 60px auto 50px;
+    align-items: center;
+    display: block;
+    padding: 20px 50px;
+    border-radius: 40px;
+    outline: none;
+    border: 0px;
+    background: linear-gradient(135deg,rgb(176, 0, 149),rgb(179, 150, 172));
+    font-size: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+    cursor: pointer;
 }
 .app{
     align-items: center;

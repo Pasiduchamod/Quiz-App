@@ -49,9 +49,14 @@ const questions = [
 const questionELement = document.getElementById("question");
 const answerButton = document.getElementById("answer-btn");
 const nextButton = document.getElementById("next-btn");
+const strtbtn = document.getElementById("strtbtn");
 
 let currentQuestionIndex = 0;
 let score = 0;
+
+function gotoquiz(){
+    window.location.href = "index.html";
+}
 
 function startQuiz(){
     currentQuestionIndex=0;
