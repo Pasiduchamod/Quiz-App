@@ -58,7 +58,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 function gotoquiz(){
-    window.location.href = "indexnew.html";
+    window.location.href = "index.html";
 }
 
 function startQuiz(){
